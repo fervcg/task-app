@@ -1,0 +1,9 @@
+taskapp\DatabaseHelper.class
+com\techspot\ejb\TaskManagerBean.class
+com\techspot\model\Usuario.class
+taskapp\DatabaseServlet.class
+taskapp\ejb\Taskbean.class
+com\techspot\model\Tarea.class
+taskapp\CreateTareaServlet.class
+taskapp\ReporteTareasServlet.class
+taskapp\dao\TareaDAO.class

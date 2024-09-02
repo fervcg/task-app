@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- Definición de servlets -->
+    <servlet>
+        <servlet-name>DatabaseServlet</servlet-name>
+        <servlet-class>taskapp.DatabaseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteTareasServlet</servlet-name>
+        <servlet-class>taskapp.ReporteTareasServlet</servlet-class>
+    </servlet>
+
+    <!-- Mapeo de URL a servlets -->
+    <servlet-mapping>
+        <servlet-name>DatabaseServlet</servlet-name>
+        <url-pattern>/DatabaseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteTareasServlet</servlet-name>
+        <url-pattern>/ReporteTareasServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Parámetros de contexto -->
+    <context-param>
+        <param-name>configParam</param-name>
+        <param-value>configValue</param-value>
+    </context-param>
+
+    <!-- Página de error personalizada -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
+
+    <!-- Configuración de seguridad -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Public</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Configuración de autenticación -->
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>ApplicationRealm</realm-name>
+    </login-config>
+
+    <!-- Definición de roles de seguridad -->
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
+</web-app>

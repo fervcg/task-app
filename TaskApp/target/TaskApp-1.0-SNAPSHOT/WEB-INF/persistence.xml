@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             version="2.1">
+    <!-- Definición de la unidad de persistencia -->
+    <persistence-unit name="taskappPU" transaction-type="JTA">
+        <!-- Fuente de datos JTA utilizada para la transacción -->
+        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+        <properties>
+            <!-- Nivel de logging para EclipseLink -->
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <!-- Driver JDBC para SQL Server -->
+            <property name="eclipselink.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <!-- URL de conexión JDBC -->
+            <property name="eclipselink.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=taskapp"/>
+            <!-- Nombre de usuario para la conexión a la base de datos -->
+            <property name="eclipselink.jdbc.user" value="sqlUsuario"/>
+            <!-- Contraseña para la conexión a la base de datos -->
+            <property name="eclipselink.jdbc.password" value="1234"/>
+        </properties>
+    </persistence-unit>
+</persistence>

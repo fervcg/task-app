@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Definición del recurso de base de datos -->
+    <Resource name="jdbc/TaskAppDB"
+              auth="Container" <!-- Autenticación realizada por el contenedor -->
+              type="javax.sql.DataSource"  <!-- Tipo del recurso, en este caso, una fuente de datos JDBC -->
+              maxTotal="20"  <!-- Número máximo de conexiones activas en el pool -->
+              maxIdle="10"   <!-- Número máximo de conexiones inactivas en el pool -->
+              maxWaitMillis="10000"  <!-- Tiempo máximo en milisegundos que una solicitud de conexión esperará para obtener una conexión -->
+              username="sqlUsuario"  <!-- Nombre de usuario para la conexión a la base de datos -->
+              password="1234"  <!-- Contraseña para la conexión a la base de datos -->
+              driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"  <!-- Clase del controlador JDBC para SQL Server -->
+              url="jdbc:sqlserver://localhost:1433;databaseName=taskapp"/>  <!-- URL de conexión a la base de datos, incluyendo el nombre de la base de datos -->
+</Context>
